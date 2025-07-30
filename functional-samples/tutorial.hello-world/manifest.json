@@ -1,6 +1,6 @@
 {
-  "name": "Audio File Fix",
-  "description": "Fix audio file playing issues in old websites",
+  "name": "Quality of Life Enhancements",
+  "description": "Fix audio file playing issues in old websites, auto-close Zoom post-attendee page",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
@@ -16,6 +16,12 @@
         "https://web.uvic.ca/lancenrd/indonesian/*"
       ],
       "all_frames": true
+    },
+    {
+      "js": ["auto-close.js"],
+      "matches": [
+        "https://zoom.us/postattendee*"
+      ]
     }
   ]
 }
