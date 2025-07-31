@@ -20,7 +20,8 @@
     {
       "js": ["auto-close.js"],
       "matches": [
-        "https://zoom.us/postattendee*"
+        "https://*.zoom.us/postattendee?mn=*",
+        "https://zoom.us/postattendee?mn=*"
       ]
     },
     {
