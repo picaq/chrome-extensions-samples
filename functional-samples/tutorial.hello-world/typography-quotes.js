@@ -1,9 +1,10 @@
 const paragraphs = [...document.querySelectorAll('p')];
 // ~ 108 letters per line /3 = 36  ;  /4 = 27  ; /5 = 21
 let sliceDepth = 30;
-sliceDepth = 20;
+// sliceDepth = 20;
 // removes orphans
 const noBreak = s => s.slice(0, s.length-sliceDepth) + s.slice(-sliceDepth).replace(/ /g, ' ');
+let hang;
 
 // get computed font family
 const family = getComputedStyle(paragraphs[0]).getPropertyValue("font-family").split(/, */)[0];
@@ -24,11 +25,17 @@ switch (true) {
   case /.*merriweather.*/i.test(family):
     hang = "merriweather";
   break;
+  case /.*brevetext.*/i.test(family):
+    hang = "brevetext";
+  break;
+  default:
+    hang = "open";
+    console.warn("No matching font family found, using default 'open' hang value.");
 }
 
 document.documentElement.style.setProperty('--hang', `var(--${hang})`);
 
-paragraphs.forEach( p => p.innerText = noBreak(p.innerText));
+paragraphs.forEach( p => p.innerHTML = noBreak(p.innerHTML));
 paragraphs.forEach( p => p.innerText[0] === "“" ? 
                          p.className = p.className + " hanging-quote" : "");
 paragraphs.forEach( p => p.innerHTML = p.innerHTML

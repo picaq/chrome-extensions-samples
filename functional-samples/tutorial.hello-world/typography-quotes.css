@@ -1,10 +1,12 @@
     :root { 
-             --open: .33em; /* Open sans*/
-         --hang-nyt: .4584em; /* nyt-imperial, Indy Serif, georgia */
-           --single: .593;
-         --garamond: .403em;
+              --open: .33em; /* Open sans*/
+          --hang-nyt: .4584em; /* nyt-imperial, Indy Serif, georgia */
+            --single: .593;
+          --garamond: .403em;
       --merriweather: .65em;  /* Merriweather */
-             --hang: var(--hang-nyt);
+      --merriweather: .478em;  /* Merriweather */
+         --brevetext: .403em;  /* Merriweather */
+              --hang: var(--hang-nyt);
     }    
 
     .hanging-quote {

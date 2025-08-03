@@ -7,6 +7,19 @@
     "default_popup": "hello.html",
     "default_icon": "hello_extensions.png"
   },
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "minimum_chrome_version": "102",
+  "omnibox": {
+  "keyword": "api"
+  },
+  "permissions": ["tabs", "activeTab", "storage"],
+  "host_permissions": [
+    "https://*.zoom.us/postattendee?mn=*",
+    "https://zoom.us/postattendee?mn=*"
+  ],
   "content_scripts": [
     {
       "js": ["conversion.js"],
